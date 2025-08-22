@@ -11,21 +11,21 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  # keeping as noarch so that the plugin may be used with architectures which are no longer actively maintained (e.g. osx-64)
   noarch: python
   number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
-  skip: true  # [py<39]
 
 requirements:
   build:
     - git # [not win]
   host:
-    - python
+    - python 3.9
     - pip
     - hatchling >=1.12.2
     - hatch-vcs >=0.2.0
   run:
-    - python
+    - python >=3.9
     - conda >=24.11
 
 test:
