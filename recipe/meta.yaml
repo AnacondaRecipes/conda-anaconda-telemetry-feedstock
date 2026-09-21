@@ -1,6 +1,6 @@
 {% set name = "conda-anaconda-telemetry" %}
-{% set version = "0.3.0" %}
-{% set sha256 = "01044e9d7cc51eab3fa70e0ffa0b7638e20c90ce00e1b346e97d94288d1111fc" %}
+{% set version = "0.3.1" %}
+{% set sha256 = "72f3c644a351606f0dc8fcf62818567e54b8cd106ae69edbfa4e5bf73e066fdd" %}
 
 package:
   name: {{ name|lower }}
@@ -13,19 +13,19 @@ source:
 build:
   # keeping as noarch so that the plugin may be used with architectures which are no longer actively maintained (e.g. osx-64)
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   build:
     - git # [not win]
   host:
-    - python 3.9
+    - python >=3.10
     - pip
     - hatchling >=1.12.2
     - hatch-vcs >=0.2.0
   run:
-    - python >=3.9
+    - python >=3.10
     - conda >=24.11
 
 test:
