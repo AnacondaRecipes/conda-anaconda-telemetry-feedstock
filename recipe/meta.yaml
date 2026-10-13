@@ -1,6 +1,6 @@
 {% set name = "conda-anaconda-telemetry" %}
-{% set version = "0.3.1" %}
-{% set sha256 = "72f3c644a351606f0dc8fcf62818567e54b8cd106ae69edbfa4e5bf73e066fdd" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "ebae0a126c513542c8500e0d35abee3ea3486eacfc48ce0866fcfd81411b6fbc" %}
 
 package:
   name: {{ name|lower }}
@@ -26,7 +26,9 @@ requirements:
     - hatch-vcs >=0.2.0
   run:
     - python >=3.10
-    - conda >=24.11
+    - conda >=26.5
+    - anaconda-opentelemetry >=1.2.5
+    - requests
 
 test:
   imports:
