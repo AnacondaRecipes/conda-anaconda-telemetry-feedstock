@@ -43,7 +43,7 @@ test:
 about:
   home: https://github.com/anaconda/{{ name }}
   summary: Anaconda Telemetry conda plugin
-  description: Anaconda Telemetry for conda adds helps us understand how conda is being used.
+  description: Anaconda Telemetry for conda helps us understand how conda is being used.
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
